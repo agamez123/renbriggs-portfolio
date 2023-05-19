@@ -24,21 +24,49 @@ export default defineComponent({
 </script>
 
 <style>
-.home {
-  display: flex;
-  padding: 2rem 20%;
-  align-items: center;
-  position: relative;
-  min-height: 100vh;
-}
+@media screen and (max-width: 450px) {
+  .home {
+    display: flex;
+    padding: 2rem 2rem;
+    position: relative;
+    min-height: 20rem;
+    align-items: center;
+  }
 
-.home>div{
-  flex: 1 1 40rem;
+  .home>div{
+    flex: 1 1 40rem;
   
+  }
+
+  .home .content {
+    color: var(--main-text);
+    font-size: 1.5rem;  
+    text-align: left;
+  }
+
+  .icon>img {
+    width: 100%;
+
+  }
 }
 
-.home .content {
-  font-size: xx-large;
-  text-align: left;
+@media screen and (min-width: 450px) {
+  .home {
+    display: flex;
+    padding: 2rem 1rem;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .home>div{
+    flex: 1 1 40rem;
+    
+  }
+  
+  .home .content {
+    font-size: xx-large;
+    text-align: left;
+  }
 }
 </style>

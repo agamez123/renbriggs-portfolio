@@ -1,14 +1,36 @@
 <template>
-  <nav>
-    <div id="nav1">test</div>
-    <div id="nav2">test</div>
-  </nav>
+  <div class="container">
+    <div class="navbg" id="navbg1">&nbsp;</div>
+    <div class="navbg" id="navbg2">&nbsp;</div>
+
+    <nav class="topbar">
+      <div id="nav1">test</div>
+      <div id="nav2">
+        <HamburgerSelect />
+      </div>
+      <div id="nav3">
+        test
+      </div>
+    </nav>
+  </div>
+
 
   <router-view/>
 </template>
 
+<script setup lang="ts">
+  import HamburgerSelect from './components/HamburgerSelect.vue'
+</script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+:root {
+  --main-text: #80FF72;
+
+  --main-bg: #171123;
+  --light-bg: #F4F8F6;
+}
 
 * {
   margin: 0;
@@ -21,26 +43,79 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #80FF72;
 }
 
 body {
-  width: auto;
-  background-color: #171123;
+  background-color: var(--main-bg);
+}
+
+@media screen and (max-width: 450px) {
+  nav.topbar {
+    display: flex;
+    height: 5em;
+    width: 100%;
+    align-items: center;
+  }
+
+  nav.topbar>div {
+    flex: 1;
+    font-size: 2rem;
+  }
+
+  nav.topbar>div#nav2 {
+    transform: translateY(20px) rotate(90deg);
+
+  }
+
+  .container {
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+  }
+
+  div.navbg {
+    position: absolute;
+    background-color: var(--light-bg);
+    z-index: -5;
+    overflow-x: visible;
+  }
+
+  div#navbg1 {
+    left: 24%;
+    transform: rotate(-8deg) scaleX(65) scaleY(6);
+  }
+  
+  div#navbg2 {
+    left: 75%;
+    transform: rotate(8deg) scaleX(65) scaleY(6);
+  }
+  
+
 
 }
 
-nav {
-  display: flex;
-  height: 5em;
-  width: 100%;
+
+@media screen and (min-width: 450px) {
+  nav.topbar {
+    display: flex;
+    height: 5em;
+    width: 100%;
+  }
+  
+  nav.topbar>div {
+    flex: 1;
+  
+  }
+  
+  nav.topbar>div#nav1 {
+    background-color: aqua;
+  }
+  
+  nav.topbar>div#nav2 {
+    background-color: aqua;
+  }
+
 }
 
-nav>div #nav1 {
-  background-color: aqua;
-}
-
-nav>div #nav2 {
-  background-color: aqua;
-}
 </style>

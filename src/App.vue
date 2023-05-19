@@ -1,4 +1,9 @@
 <template>
+  <nav>
+    <div id="nav1">test</div>
+    <div id="nav2">test</div>
+  </nav>
+
   <router-view/>
 </template>
 
@@ -19,12 +24,23 @@
   color: #80FF72;
 }
 
-div {
-  display: block;
-}
-
 body {
+  width: auto;
   background-color: #171123;
 
+}
+
+nav {
+  display: flex;
+  height: 5em;
+  width: 100%;
+}
+
+nav>div #nav1 {
+  background-color: aqua;
+}
+
+nav>div #nav2 {
+  background-color: aqua;
 }
 </style>

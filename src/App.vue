@@ -1,12 +1,14 @@
 <template>
   <div class="container">
+    <DropDown v-if="dropDown.show"/>
+
     <div class="navbg" id="navbg1">&nbsp;</div>
     <div class="navbg" id="navbg2">&nbsp;</div>
 
     <nav class="topbar">
       <div id="nav1">test</div>
       <div id="nav2">
-        <HamburgerSelect />
+        <HamburgerSelect height="2em" width="2em" color="#F6C900" :drop="dropDown.show" @click="handleClick"/>
       </div>
       <div id="nav3">
         test
@@ -20,6 +22,15 @@
 
 <script setup lang="ts">
   import HamburgerSelect from './components/HamburgerSelect.vue'
+  import DropDown from './components/DropDown.vue'
+  import { reactive } from 'vue'
+
+  const dropDown = reactive({ show: false })
+
+  const handleClick = () => {
+    dropDown.show = !dropDown.show
+    console.log(dropDown.show)
+  }
 </script>
 
 <style>
@@ -69,7 +80,7 @@ body {
 
   .container {
     overflow-x: hidden;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 15vh;
   }

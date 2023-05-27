@@ -20,7 +20,7 @@ const props = defineProps<{
 
 </script>
 
-<style>
+<style scoped>
 .neutral {
     transform: rotate(90deg);
     transition: transform 0.5s;
@@ -31,6 +31,7 @@ const props = defineProps<{
     transition: transform 0.5s;
     transition-timing-function: ease;
 }
+
 
 
 </style>

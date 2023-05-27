@@ -1,6 +1,6 @@
 <template>
+  <DropDown :class="{ isDropped: dropDown.show} "/>
   <div class="container">
-    <DropDown v-if="dropDown.show"/>
 
     <div class="navbg" id="navbg1">&nbsp;</div>
     <div class="navbg" id="navbg2">&nbsp;</div>
@@ -41,6 +41,8 @@
 
   --main-bg: #171123;
   --light-bg: #F4F8F6;
+
+  --main-accent: #DB5461;
 }
 
 * {
@@ -85,9 +87,13 @@ body {
     height: 15vh;
   }
 
+  div.nav2 {
+    z-index: 10;
+  }
+
   div.navbg {
     position: absolute;
-    background-color: var(--light-bg);
+    background-color: var(--main-accent);
     z-index: -5;
     overflow-x: visible;
   }

@@ -1,6 +1,6 @@
 <template>
-  <DropDown :class="{ isDropped: dropDown.show} "/>
   <div class="container">
+    <DropDown :class="{ isDropped: dropDown.show} "/>
 
     <div class="navbg" id="navbg1">&nbsp;</div>
     <div class="navbg" id="navbg2">&nbsp;</div>
@@ -43,12 +43,14 @@
   --light-bg: #F4F8F6;
 
   --main-accent: #DB5461;
+
+  --drop-down-height: 45vh;
 }
 
 * {
   margin: 0;
   padding: 0;
-
+  /* outline: violet solid 10px; */
 }
 
 #app {
@@ -85,6 +87,7 @@ body {
     position: relative;
     width: 100%;
     height: 15vh;
+    z-index: 10;
   }
 
   div.nav2 {

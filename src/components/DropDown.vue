@@ -1,7 +1,9 @@
 <template>
     <div class="box">
-        <div class="box" id="transition">
-
+        <div class="center">
+            <li>Projects</li>
+            <li>About</li>
+            <li>Contact</li>
         </div>
     </div>
 </template>
@@ -15,7 +17,7 @@
 <style scoped>
 .box {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 0vh;
     background: var(--light-bg);
     overflow: hidden;
@@ -24,7 +26,10 @@
 }
 
 .isDropped {
-    height: 45vh;
+    height: var(--drop-down-height);
 }
 
+.center {
+    height: var(--drop-down-height);
+}
 </style>

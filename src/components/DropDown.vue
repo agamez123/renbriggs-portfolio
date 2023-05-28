@@ -1,9 +1,11 @@
 <template>
     <div class="box">
         <div class="center">
-            <li>Projects</li>
-            <li>About</li>
-            <li>Contact</li>
+            <ol>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ol>
         </div>
     </div>
 </template>
@@ -31,5 +33,13 @@
 
 .center {
     height: auto;
+    margin-top: 13vh;
 }
+
+li {
+    padding: 1em;
+    font-size: x-large;
+}
+
+
 </style>

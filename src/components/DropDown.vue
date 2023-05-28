@@ -30,6 +30,6 @@
 }
 
 .center {
-    height: var(--drop-down-height);
+    height: auto;
 }
 </style>

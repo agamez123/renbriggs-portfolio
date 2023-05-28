@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <DropDown :class="{ isDropped: dropDown.show} "/>
+    <DropDown :class="{ isDropped: dropDown.show }" />
 
     <div class="navbg" id="navbg1">&nbsp;</div>
     <div class="navbg" id="navbg2">&nbsp;</div>
@@ -8,7 +8,7 @@
     <nav class="topbar">
       <div id="nav1">test</div>
       <div id="nav2">
-        <HamburgerSelect height="2em" width="2em" color="#F6C900" :drop="dropDown.show" @click="handleClick"/>
+        <HamburgerSelect height="2em" width="2em" color="#F6C900" :drop="dropDown.show" @click="handleClick" />
       </div>
       <div id="nav3">
         test
@@ -17,20 +17,20 @@
   </div>
 
 
-  <router-view/>
+  <router-view />
 </template>
 
 <script setup lang="ts">
-  import HamburgerSelect from './components/HamburgerSelect.vue'
-  import DropDown from './components/DropDown.vue'
-  import { reactive } from 'vue'
+import HamburgerSelect from './components/HamburgerSelect.vue'
+import DropDown from './components/DropDown.vue'
+import { reactive } from 'vue'
 
-  const dropDown = reactive({ show: false })
+const dropDown = reactive({ show: false })
 
-  const handleClick = () => {
-    dropDown.show = !dropDown.show
-    console.log(dropDown.show)
-  }
+const handleClick = () => {
+  dropDown.show = !dropDown.show
+  console.log(dropDown.show)
+}
 </script>
 
 <style>
@@ -105,12 +105,12 @@ body {
     left: 24%;
     transform: rotate(-8deg) scaleX(65) scaleY(6);
   }
-  
+
   div#navbg2 {
     left: 75%;
     transform: rotate(8deg) scaleX(65) scaleY(6);
   }
-  
+
 
 
 }
@@ -122,20 +122,19 @@ body {
     height: 5em;
     width: 100%;
   }
-  
+
   nav.topbar>div {
     flex: 1;
-  
+
   }
-  
+
   nav.topbar>div#nav1 {
     background-color: aqua;
   }
-  
+
   nav.topbar>div#nav2 {
     background-color: aqua;
   }
 
 }
-
 </style>

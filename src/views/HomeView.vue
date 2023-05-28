@@ -29,14 +29,14 @@
     align-items: center;
   }
 
-  .home>div{
+  .home>div {
     flex: 1 1 40rem;
-  
+
   }
 
   .home .content {
     color: var(--main-text);
-    font-size: 1.5rem;  
+    font-size: 1.5rem;
     text-align: left;
   }
 
@@ -54,12 +54,12 @@
     position: relative;
     min-height: 100vh;
   }
-  
-  .home>div{
+
+  .home>div {
     flex: 1 1 40rem;
-    
+
   }
-  
+
   .home .content {
     font-size: xx-large;
     text-align: left;

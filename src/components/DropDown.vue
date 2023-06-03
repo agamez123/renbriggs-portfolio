@@ -1,12 +1,13 @@
 <template>
     <div class="box">
-        <div class="center">
-            <ol>
-                <li>Projects</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ol>
-        </div>
+
+        <ol>
+            <li><router-link active-class="active" to="/">Home</router-link></li>
+            <li><router-link active-class="active" to="/projects">Projects</router-link></li>
+            <li><router-link active-class="active" to="/about">About</router-link></li>
+            <li><router-link active-class="active" to="/contact">Contact</router-link></li>
+        </ol>
+
     </div>
 </template>
 
@@ -32,14 +33,37 @@
 }
 
 .center {
-    height: auto;
-    margin-top: 13vh;
+    height: var(--drop-down-height);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover, a.active {
+    background-color: indianred;
+}
+
+ol {
+    margin-top: 14vh;
+    height: calc(var(--drop-down-height) - 14vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 li {
-    padding: 1em;
+    /* padding: 1em; */
+    max-width: 100%;
+    max-height: 100%;
     font-size: x-large;
+    flex-grow: 1;
 }
+
 
 
 </style>

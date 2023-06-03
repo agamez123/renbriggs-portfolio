@@ -23,9 +23,18 @@
 <script setup lang="ts">
 import HamburgerSelect from './components/HamburgerSelect.vue'
 import DropDown from './components/DropDown.vue'
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 const dropDown = reactive({ show: false })
+const route = useRoute()
+
+watch(
+  () => route.params,
+  (to, from) => {
+    dropDown.show = false
+  }
+)
 
 const handleClick = () => {
   dropDown.show = !dropDown.show
@@ -44,7 +53,7 @@ const handleClick = () => {
 
   --main-accent: #DB5461;
 
-  --drop-down-height: 45vh;
+  --drop-down-height: 50vh;
 }
 
 * {
